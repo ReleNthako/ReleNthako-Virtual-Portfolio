@@ -558,7 +558,7 @@ function Hero() {
         <p className="hero-desc">{PROFILE.role} — comfortable moving between systems-level thinking and practical code.</p>
         <div className="cta-row">
           <a className="btn primary" href="#projects" onClick={(e)=>{e.preventDefault();document.getElementById("projects")?.scrollIntoView({behavior:"smooth"});}}>View projects</a>
-          <a className="btn ghost" href={`mailto:${PROFILE.email}`}>Get in touch</a>
+          {/* <a className="btn ghost" href={`mailto:${PROFILE.email}`}>Get in touch</a> */}
         </div>
         <Trace />
       </div>
