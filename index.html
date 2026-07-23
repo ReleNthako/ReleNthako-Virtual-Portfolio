@@ -481,9 +481,15 @@ function Typewriter({ words }) {
 
   useEffect(() => {
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduced) { setText(words[0]); return; }
+
+    if (reduced) {
+      setText(words[wordIdx % words.length]);
+      const t = setTimeout(() => setWordIdx((i) => i + 1), 1500);
+      return () => clearTimeout(t);
+    }
 
     const current = words[wordIdx % words.length];
+
     const speed = deleting ? 35 : 65;
     const pause = 1400;
 
